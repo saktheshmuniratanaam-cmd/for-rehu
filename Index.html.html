@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff4f3">
+<title>For Rehu, with love ♡</title>
+<style>
+  :root{--rose:#c95f75;--deep:#783c50;--ink:#4d3540;--cream:#fffaf6;--pink:#fce8eb;--muted:#886f79}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;min-height:100vh;color:var(--ink);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(ellipse at 15% 10%,#fff 0,transparent 35%),linear-gradient(145deg,#fff7f1,#fde9ed 55%,#f8e8ef);overflow-x:hidden}
+  button{font:inherit}
+  .ambient{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+  .float-heart{position:absolute;bottom:-40px;color:#d77d91;opacity:0;animation:rise linear infinite}
+  @keyframes rise{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.28}85%{opacity:.18}100%{transform:translateY(-115vh) rotate(25deg);opacity:0}}
+  .wrap{position:relative;z-index:1;width:min(720px,100%);margin:auto;padding:28px 18px 50px}
+  .topline{text-align:center;letter-spacing:.18em;text-transform:uppercase;font:11px/1.5 Arial,sans-serif;color:var(--rose);margin:14px 0 24px}
+  .hero{text-align:center;padding:18px 4px 24px}
+  .eyebrow{font:12px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  h1{font-weight:normal;font-size:clamp(43px,10vw,70px);line-height:1.02;letter-spacing:-.045em;margin:15px 0 12px;color:var(--deep)}
+  h1 em{font-weight:normal;color:var(--rose)}
+  .intro{font-size:17px;line-height:1.8;max-width:490px;margin:0 auto;color:#755966}
+  .tiny-heart{font-size:24px;color:var(--rose);margin:17px 0}
+  .letter-card{background:rgba(255,255,255,.78);border:1px solid rgba(201,95,117,.2);border-radius:25px;box-shadow:0 18px 55px rgba(120,60,80,.09);padding:clamp(22px,6vw,43px);position:relative;overflow:hidden}
+  .letter-card:before{content:"";position:absolute;inset:9px;border:1px solid rgba(201,95,117,.12);border-radius:18px;pointer-events:none}
+  .letter-head{display:flex;align-items:center;gap:12px;margin-bottom:25px;position:relative}
+  .seal{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;background:var(--pink);border-radius:50%;font-size:23px}
+  .letter-head small{display:block;font:11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .letter-head strong{font-size:20px;font-weight:normal;color:var(--deep)}
+  .letter-body{font-size:17px;line-height:1.95;position:relative}
+  .letter-body p{margin:0 0 18px}
+  .letter-body .first{font-size:22px;color:var(--deep)}
+  .signature{font-style:italic;color:var(--rose);font-size:23px;margin-top:24px}
+  .promise{margin:23px 0 0;padding:17px 18px;border-left:2px solid #d77d91;background:#fff5f4;border-radius:0 12px 12px 0;font-size:15px;line-height:1.8}
+  .section{text-align:center;padding:43px 8px 12px}
+  h2{font-weight:normal;font-size:clamp(29px,7vw,39px);color:var(--deep);margin:0 0 12px}
+  .section p{color:#755966;line-height:1.8;font-size:16px;max-width:500px;margin:0 auto 22px}
+  .reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:23px 0}
+  .reason{padding:18px 10px;background:rgba(255,255,255,.62);border:1px solid rgba(201,95,117,.15);border-radius:17px;font-size:14px;line-height:1.6}
+  .reason span{display:block;font-size:25px;margin-bottom:9px}
+  .choice-box{background:rgba(255,255,255,.6);border:1px solid rgba(201,95,117,.18);border-radius:22px;padding:25px 18px;text-align:center;margin-top:20px}
+  .choices{display:flex;flex-wrap:wrap;justify-content:center;gap:11px;margin-top:19px}
+  .btn{border:0;border-radius:999px;padding:13px 20px;cursor:pointer;transition:transform .2s,box-shadow .2s;font-size:14px}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px #c95f7525}
+  .btn-primary{background:var(--rose);color:white}
+  .btn-soft{background:white;color:var(--deep);border:1px solid #e7bac5}
+  .btn-hug{position:relative;background:linear-gradient(135deg,#c95f75,#a84767);color:#fff;border:1px solid rgba(255,255,255,.8);font-weight:bold;box-shadow:0 0 0 4px #f5cbd5,0 8px 24px #b94e6b55;animation:hugPulse 2s ease-in-out infinite;transform:scale(1.04)}
+  .btn-hug:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 0 0 5px #f5cbd5,0 12px 28px #b94e6b66}
+  .hug-sparkle{display:inline-block;color:#ffe6a8;margin:0 3px;animation:sparkle 1.5s ease-in-out infinite}
+  @keyframes hugPulse{0%,100%{box-shadow:0 0 0 4px #f5cbd5,0 8px 24px #b94e6b44}50%{box-shadow:0 0 0 7px #f5cbd5,0 10px 30px #b94e6b66}}
+  @keyframes sparkle{0%,100%{opacity:.55;transform:scale(.85)}50%{opacity:1;transform:scale(1.2)}}
+  @media(prefers-reduced-motion:reduce){.btn-hug,.hug-sparkle{animation:none!important}}
+  .response{display:none;margin:21px auto 0;max-width:470px;padding:16px;border-radius:14px;background:#fff5f4;color:var(--deep);line-height:1.75;font-size:15px}
+  .response.show{display:block;animation:fade .5s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  .footer{text-align:center;padding:38px 10px 8px;color:var(--muted);font-size:13px;line-height:1.8}
+  .footer .big{font-size:28px;color:var(--rose)}
+  .envelope-wrap{display:flex;justify-content:center;margin:28px 0 8px}
+  .envelope{position:relative;width:170px;height:112px;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 12px 10px #9a536022);transition:transform .2s}
+  .envelope:hover{transform:translateY(-3px)}
+  .env-back{position:absolute;inset:0;background:#e9a6b5;border-radius:7px}
+  .env-paper{position:absolute;left:13px;right:13px;top:9px;height:82px;background:#fffaf7;border-radius:4px;transition:transform .6s;display:grid;place-items:center;color:var(--rose);font-size:26px}
+  .env-front{position:absolute;inset:0;background:#f4c4ce;clip-path:polygon(0 100%,0 0,50% 58%,100% 0,100% 100%);border-radius:0 0 7px 7px}
+  .env-flap{position:absolute;inset:0;background:#e6a0b1;clip-path:polygon(0 0,100% 0,50% 61%);transform-origin:top;transition:transform .6s;z-index:2}
+  .envelope.open .env-flap{transform:rotateX(180deg)}
+  .envelope.open .env-paper{transform:translateY(-48px)}
+  .tap-hint{font:11px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:center}
+  .divider{width:55px;height:1px;background:#dba1af;margin:27px auto}
+  @media(max-width:480px){.wrap{padding:17px 13px 35px}.letter-card{border-radius:20px}.letter-body{font-size:16px;line-height:1.9}.reasons{grid-template-columns:1fr;gap:8px}.reason{display:flex;align-items:center;text-align:left;gap:13px;padding:12px 16px}.reason span{margin:0}.intro{font-size:16px}.topline{margin-top:8px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="ambient" id="ambient" aria-hidden="true"></div>
+<main class="wrap">
+  <div class="topline">a little note from my heart to yours</div>
+  <header class="hero">
+    <div class="eyebrow">For my favourite person to fight with ♡</div>
+    <h1>I'm sorry,<br><em>Rehu.</em></h1>
+    <p class="intro">Some things are hard to say face-to-face. So I made you this little corner of the internet, hoping I can finally say them properly.</p>
+    <div class="tiny-heart">♡</div>
+    <div class="envelope-wrap">
+      <button class="envelope" id="envelope" aria-label="Open the little envelope" aria-expanded="false">
+        <span class="env-back"></span><span class="env-paper">for you, Rehu ♡</span><span class="env-front"></span><span class="env-flap"></span>
+      </button>
+    </div>
+    <div class="tap-hint">tap the little envelope</div>
+  </header>
+
+  <article class="letter-card" id="letter">
+    <div class="letter-head">
+      <div class="seal">♡</div>
+      <div><small>A letter I owe you</small><strong>Dear Rehu,</strong></div>
+    </div>
+    <div class="letter-body">
+      <p class="first">I'm really, truly sorry.</p>
+      <p>I've been thinking about the way I've treated you, and I know I haven't always been the brother you deserve. I've been too possessive, I've picked fights over and over, and I've often cared more about how <em>I</em> felt than about how my words and actions made <em>you</em> feel.</p>
+      <p>That wasn't fair to you. Just because I care about you doesn't make it okay for me to make you feel bad, limit you, or turn every little thing into an argument. My intentions don't erase the hurt I've caused. I'm sorry for the times I made being around me feel stressful instead of safe and comfortable.</p>
+      <p>You deserve to be heard, understood, trusted, and treated with respect. I should have listened to your side instead of always trying to prove mine. I should have paused, thought about your feelings, and chosen kindness instead of another fight.</p>
+      <p>I can't undo those moments with one message, and I don't expect you to forget them just because I'm apologising now. I know that saying sorry only matters if I start showing you something different.</p>
+      <p>I'm going to work on giving you space, listening without getting defensive, and speaking to you calmly even when we disagree. I'll try to understand before I react. I know I'll have to prove this through my actions, not just promise it here.</p>
+      <p>You're my sister, Rehu, and our bond means so much to me. I never want my love for you to feel like pressure or control. I want it to feel like support, trust, laughter, and a person you can count on.</p>
+      <p>You don't have to forgive me right away or pretend that everything is okay. Take the time you need. I just wanted you to know that I see where I've gone wrong, I'm sorry for hurting you, and I want to do better—for real.</p>
+      <div class="promise"><strong>My promise to you:</strong> I'll work on my behaviour, respect your feelings and boundaries, and try to make our relationship feel better through the little things I do every day.</div>
+      <p class="signature">With all my love, and a genuinely sorry heart. ♡</p>
+    </div>
+  </article>
+
+  <section class="section">
+    <h2>What I want you to know</h2>
+    <p>An apology isn't a magic fix. These are the things I want to remember when we're upset with each other.</p>
+    <div class="reasons">
+      <div class="reason"><span>👂</span><div><strong>I'll listen.</strong><br>Your side matters just as much as mine.</div></div>
+      <div class="reason"><span>🕊️</span><div><strong>I'll respect you.</strong><br>Caring about you means giving you room to be yourself.</div></div>
+      <div class="reason"><span>🌱</span><div><strong>I'll keep trying.</strong><br>I'll show change through my actions, not only words.</div></div>
+    </div>
+    <div class="divider"></div>
+  </section>
+
+  <section class="section" id="question">
+    <h2>Can we take a little step forward?</h2>
+    <p>You don't owe me an instant answer, Rehu. I just hope that, when you're ready, we can talk honestly and find our way back to more peaceful days.</p>
+    <div class="choice-box">
+      <div style="font-size:27px;color:var(--rose);margin-bottom:10px">♡</div>
+      <div style="font-size:18px;color:var(--deep)">Whatever you feel is okay.</div>
+      <div class="choices">
+        <button class="btn btn-soft" id="forgive">I forgive you 💗</button>
+        <button class="btn btn-soft" id="time">I need some time 🤍</button>
+        <button class="btn btn-hug" id="hug"><span class="hug-sparkle" aria-hidden="true">✦</span> 🫂 Sending a virtual hug <span class="hug-sparkle" aria-hidden="true">✦</span></button>
+      </div>
+      <div class="response" id="response" role="status" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="big">♡</div>
+    <div>Whatever happens, you're important to me, Rehu.</div>
+    <div>I'm sorry for the hurt. I'll do my best to do better.</div>
+    <div style="margin-top:14px;font-size:11px;opacity:.75">made with love, just for you</div>
+  </footer>
+</main>
+<script>
+  // Gentle floating hearts, created locally with no external libraries.
+  const ambient = document.getElementById('ambient');
+  const heartSymbols = ['♡','♥','✧'];
+  for(let i=0;i<17;i++){
+    const heart=document.createElement('span');
+    heart.className='float-heart';
+    heart.textContent=heartSymbols[i%heartSymbols.length];
+    heart.style.left=(Math.random()*100)+'%';
+    heart.style.animationDuration=(13+Math.random()*15)+'s';
+    heart.style.animationDelay=(-Math.random()*25)+'s';
+    heart.style.fontSize=(12+Math.random()*17)+'px';
+    ambient.appendChild(heart);
+  }
+  const envelope=document.getElementById('envelope');
+  envelope.addEventListener('click',()=>{
+    const isOpen=envelope.classList.toggle('open');
+    envelope.setAttribute('aria-expanded',String(isOpen));
+    if(isOpen) document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  const response=document.getElementById('response');
+  function showMessage(message){
+    response.textContent=message;
+    response.classList.add('show');
+  }
+  document.getElementById('forgive').addEventListener('click',()=>{
+    showMessage('Thank you for hearing me, Rehu. ♡ I won’t treat your forgiveness as permission to go back to old habits. I’ll keep working to be better.');
+    gentleHearts();
+  });
+  document.getElementById('time').addEventListener('click',()=>{
+    showMessage('Of course, Rehu. Take all the time you need. 🤍 I won’t pressure you for an answer. I’ll respect your space, and I’m here when you feel ready.');
+  });
+  document.getElementById('hug').addEventListener('click',()=>{
+    showMessage('Biggest virtual hug for you, Rehu. 🫂 No pressure to say anything right now. I just hope this helps you feel how much you mean to me.');
+    gentleHearts();
+  });
+  function gentleHearts(){
+    for(let i=0;i<12;i++){
+      const h=document.createElement('span');
+      h.textContent='♡';
+      h.style.cssText=`position:fixed;left:${15+Math.random()*70}%;top:${45+Math.random()*35}%;z-index:5;color:#c95f75;font-size:${18+Math.random()*18}px;pointer-events:none;transition:transform 1.8s ease,opacity 1.8s ease;opacity:1`;
+      document.body.appendChild(h);
+      requestAnimationFrame(()=>{h.style.transform=`translateY(-${90+Math.random()*180}px) rotate(${Math.random()*50-25}deg)`;h.style.opacity='0'});
+      setTimeout(()=>h.remove(),1900);
+    }
+  }
+</script>
+</body>
+</html>
